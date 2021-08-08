@@ -1,0 +1,26 @@
+
+Response body
+Download
+{
+  "LocalObservationDateTime": "2021-07-26T14:07:00+02:00",
+  "EpochTime": 1627301220,
+  "WeatherText": "Zachmurzenie duże",
+  "WeatherIcon": 6,
+  "HasPrecipitation": false,
+  "PrecipitationType": null,
+  "IsDayTime": true,
+  "Temperature": {
+    "Metric": {
+      "Value": 26.1,
+      "Unit": "C",
+      "UnitType": 17
+    },
+    "Imperial": {
+      "Value": 79,
+      "Unit": "F",
+      "UnitType": 18
+    }
+  },
+  "MobileLink": "http://www.accuweather.com/pl/pl/warsaw/274663/current-weather/274663",
+  "Link": "http://www.accuweather.com/pl/pl/warsaw/274663/current-weather/274663"
+}
