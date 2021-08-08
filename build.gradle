@@ -1,54 +1,63 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.2'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
 }
 
 group = 'com.odzywkowo'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaLanguageVersion.of(8)
+sourceCompatibility = JavaLanguageVersion.of(11)
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
-	jcenter()
-	maven { url "https://repo.spring.io/snapshot" }
-	maven { url "https://repo.spring.io/milestone" }
-	maven { url "http://repo.spring.io/libs-snapshot" }
-	maven { url 'https://jitpack.io' }
+    mavenCentral()
+    jcenter()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "http://repo.spring.io/libs-snapshot" }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-	implementation 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
-	implementation 'org.springframework.boot:spring-boot-starter:2.4.2'
-	implementation 'org.springframework.boot:spring-boot-starter-web:2.4.2'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.4.2'
-	implementation 'org.springframework.boot:spring-boot-starter-security:2.4.2'
-	implementation 'org.springframework.boot:spring-boot-starter-logging:2.4.2'
-	implementation 'org.springframework.boot:spring-boot-starter-validation:2.4.2'
-	implementation 'org.springframework.boot:spring-boot-starter-mail:2.4.0'
-	implementation 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter:2.4.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.4.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.4.2'
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.4.2'
+    implementation 'org.springframework.boot:spring-boot-starter-logging:2.4.2'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.4.2'
+    implementation 'org.springframework.boot:spring-boot-starter-mail:2.4.0'
+    // implementation 'mysql:mysql-connector-java'
 
 	// https://mvnrepository.com/artifact/com.sun.mail/javax.mail
-	implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.1'
+    implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
 
-	// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
 
-	//swagger
-	implementation "io.springfox:springfox-boot-starter:3.0.0"
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    implementation group: 'commons-io', name: 'commons-io', version: '2.10.0'
 
-	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.2'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+    // swagger
+    implementation "io.springfox:springfox-boot-starter:3.0.0"
+
+    // okhttp
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.2'
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
